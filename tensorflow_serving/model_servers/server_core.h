@@ -99,7 +99,7 @@ class ServerCore : public Manager {
 
     // The number of threads used to load models. If set to 0, then no thread
     // pool is used and loads are performed serially in the manager thread.
-    int32 num_load_threads = 0;
+    int32 num_load_threads = 1;
 
     // The number of load threads used to load the initial set of models at
     // server startup. This is set high to load up the initial set of models
@@ -108,7 +108,7 @@ class ServerCore : public Manager {
 
     // The number of threads used to unload models. If set to 0, then no thread
     // pool is used and unloads are performed serially in the manager thread.
-    int32 num_unload_threads = 0;
+    int32 num_unload_threads = 1;
 
     // Total model size limit, in terms of main memory, in bytes.
     uint64 total_model_memory_limit_bytes = std::numeric_limits<uint64>::max();
