@@ -13,15 +13,15 @@
 # limitations under the License.
 
 ARG TF_SERVING_VERSION=latest
-ARG TF_SERVING_BUILD_IMAGE=tensorflow/serving:${TF_SERVING_VERSION}-devel
+ARG TF_SERVING_BUILD_IMAGE=liangyuxin-tensorflow/serving:${TF_SERVING_VERSION}-devel
 
 FROM ${TF_SERVING_BUILD_IMAGE} as build_image
 FROM ubuntu:18.04
 
-ARG TF_SERVING_VERSION_GIT_BRANCH=master
+ARG TF_SERVING_VERSION_GIT_BRANCH=2.0.1
 ARG TF_SERVING_VERSION_GIT_COMMIT=head
 
-LABEL maintainer="gvasudevan@google.com"
+LABEL maintainer="liangyuxin.02@gmail.com"
 LABEL tensorflow_serving_github_branchtag=${TF_SERVING_VERSION_GIT_BRANCH}
 LABEL tensorflow_serving_github_commit=${TF_SERVING_VERSION_GIT_COMMIT}
 
